@@ -6,19 +6,35 @@
 
 
 function encryptPhoneNumber() {
-  let phoneNumInput = prompt("What is your phone number?");
-  let phoneNumString = phoneNumInput.toString();
+  let phoneNumInitialInput = prompt("What is your phone number? Only 10-digit numbers please");
+ // let phoneNumInput
+ // function checkPhoneNumInt() {
+  // if (+phoneNumInitialInput === +phoneNumInitialInput) {
+  //   return phoneNumInput = phoneNumInitialInput;
+  // } else {
+  //   alert ("Cannot be processed. Only number inputs are allowed for phone numbers.")
+ //  }
+//  }
+  
+  let phoneNumString = phoneNumInitialInput.toString();
   let phoneNumSections = [];
   let phoneNumSectDash = [];
   let phoneNumSectAsterisk = [];
   let param;
   
+ // for (int i = 0; i < s.length(); i++)
+   //     if (isdigit(s[i]) == false)
+     //       return false;
+ 
+    //return true;
+//}
+ 
   for (let i = 0, sectionLength = phoneNumString.length; i < sectionLength - 4; i += 3) {
     phoneNumSections.push(phoneNumString.substring(i, i + 3));
-}
+  }
   for (let j = 6, sectionLength = phoneNumString.length; j < sectionLength; j += 4) {
    phoneNumSections.push(phoneNumString.substring(j, j + 4));
-}     
+  }     
  
   for (let k = 0; k < phoneNumSections.length -1; k++) {
     phoneNumSectDash.push(phoneNumSections[k], '-');
