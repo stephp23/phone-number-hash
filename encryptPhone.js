@@ -5,12 +5,13 @@
  */
 
 
-function encryptPhoneNumber(phoneNumInput) {
+function encryptPhoneNumber() {
+  let phoneNumInput = prompt("What is your phone number?");
   let phoneNumString = phoneNumInput.toString();
   let phoneNumSections = [];
-  let phoneNumSectAsterisk = [];
   let phoneNumSectDash = [];
-  
+  let phoneNumSectAsterisk = [];
+  let param;
   
   for (let i = 0, sectionLength = phoneNumString.length; i < sectionLength - 4; i += 3) {
     phoneNumSections.push(phoneNumString.substring(i, i + 3));
@@ -18,27 +19,24 @@ function encryptPhoneNumber(phoneNumInput) {
   for (let j = 6, sectionLength = phoneNumString.length; j < sectionLength; j += 4) {
    phoneNumSections.push(phoneNumString.substring(j, j + 4));
 }     
-  phoneNumSectAsterisk = phoneNumSections;
+ 
+  for (let k = 0; k < phoneNumSections.length -1; k++) {
+    phoneNumSectDash.push(phoneNumSections[k], '-');
+  }
+  
+  for (let l = 2; l < phoneNumSections.length; l++) {
+    phoneNumSectDash.push(phoneNumSections[l]);
+  }
+  
+  param = phoneNumSectDash.join("");
+  
+  phoneNumSectAsterisk = phoneNumSectDash.slice();
   phoneNumSectAsterisk[0] = '***';
-  phoneNumSectAsterisk[1] = '***';
-  
- // for (let k = 0; k < phoneNumSections.length; k+= 2) {
- //   phoneNumSectDash.push(phoneNumSections[1], '-');
-//  }
-  
-  //for (let l = 2; l < phoneNumSections.length; l+= 2) {
-   //phoneNumSectDash.push(phoneNumSections[4], '-');
- // }
-  
-  //param = phoneNumSections.join(" ");
+  phoneNumSectAsterisk[2] = '***';
+  paramEncrypted = phoneNumSectAsterisk.join("");
 
-  return console.log(phoneNumSections);
+  return paramEncrypted
   
 }
 
-encryptPhoneNumber(2223334444)
-  //let phoneNumSections = phoneNumString.match(/.{1,3}/g);
-  //let param = phoneNumSections.join("-");
-
-  //return console.log(phoneNumSections)
- 
+console.log(encryptPhoneNumber());
