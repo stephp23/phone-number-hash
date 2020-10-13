@@ -20,7 +20,7 @@ function encryptPhoneNumber(phoneNumInput) {
 }     
   phoneNumSectAsterisk = phoneNumSections;
   phoneNumSectAsterisk[0] = '***';
-//  phoneNumSectAsterisk[1] = '***';
+  phoneNumSectAsterisk[1] = '***';
   
  // for (let k = 0; k < phoneNumSections.length; k+= 2) {
  //   phoneNumSectDash.push(phoneNumSections[1], '-');
